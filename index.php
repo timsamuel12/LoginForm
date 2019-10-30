@@ -1,5 +1,26 @@
 <?php
+    if(isset($_POST['submit']))
+    {
+        $email = $_POST['fname'];
+        $pass = $_POST['pass'];
 
+        if($email == '')
+        {
+            $error= "Email is required";
+        }
+        else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+        {
+            $error = "<b>$email</b> is not a valid email address";
+        }
+        else if($pass == '')
+        {
+            $error = "Password is required";
+        }
+        else if(strlen($pass)<8)
+        {
+            $error = "Minimum password length is 8";
+        }
+    }
 
 ?>
 
