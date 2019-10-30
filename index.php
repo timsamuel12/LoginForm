@@ -33,6 +33,12 @@
 <body>
     <h1>Login</h1>
     <form method = "post">
+        <?php
+            if(isset($error))
+                {
+                    echo "<i>Error: ".$error."</i><br><br>";
+                }
+        ?>
         Email:
         <input type = "text" name = "fname" placeholder = "Enter User Email"><br><br>
         Password:
